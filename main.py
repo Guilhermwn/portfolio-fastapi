@@ -10,8 +10,22 @@ templates = Jinja2Templates(directory='templates')
 
 @app.get('/', response_class=HTMLResponse)
 def home(request: Request):
-    context = {'request': request}
+    project_list = {
+        'projeto1': {
+            'image': 'image.png',
+            'title': 'Projeto',
+            'link': '/',
+            'description': 'A brief description of the project'
+        }
+    }
+
+    context = {
+        'request': request,
+        'project_list': project_list
+        }
     return templates.TemplateResponse('index.jinja', context)
+
+
 
 if __name__ == '__main__':
     import uvicorn
