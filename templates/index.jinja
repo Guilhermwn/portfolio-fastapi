@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilhermwn - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+    <style>
+        .rubik {
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+        }
+        .rubik-light {
+            font-weight: 300;
+        }
+        .rubik-regular {
+            font-weight: 400;
+        }
+        .rubik-medium {
+            font-weight: 500;
+        }
+        .rubik-semibold {
+            font-weight: 600;
+        }
+        .rubik-bold {
+            font-weight: 700;
+        }
+        .rubik-extrabold {
+            font-weight: 800;
+        }
+        .rubik-black {
+            font-weight: 900;
+        }
+    </style>
 </head>
-<body>
-    <h1>Bem-vindo à Home Page!</h1>
-    <p>Método HTTP: {{ request.method }}</p>
-    <p>URL: {{ request.url }}</p>
+<body class="bg-gray-900 text-white rubik-regular">
+
+    <!-- PRESENTATION CONTAINER -->
+    <div class="w-full min-h-screen flex flex-col justify-center items-center">
+
+        <!-- PAGE LINKS -->
+        <div class="flex ml-5 space-x-4">
+            <a href="/links" class="px-2 py-1 text-lg hover:bg-green-800 rubik-medium">Links</a>
+            <a href="/projetos" class="px-2 py-1 text-lg hover:bg-green-800 rubik-medium">Projetos</a>
+            <a href="/sobre" class="px-2 py-1 text-lg hover:bg-green-800 rubik-medium">Sobre</a>
+        </div>
+
+        <div class="w-4/5 sm:w-1/2 my-5 border-t border-gray-600"></div>
+
+        <!-- MAIN ELEMENT HOLDER -->
+        <div class="flex justify-center items-center space-x-5">
+            
+            <!-- OWNER'S NAME -->
+            <div class="pl-5">
+                <h1 class="text-3xl sm:text-4xl rubik-medium">Guilherme Franco</h1>
+            </div>
+
+            <!-- LOGO -->
+            <div class="items-center sm:ml-5">
+                <img src="assets/guilhermwn-light.png" alt="Guilhermwn Logo" class="w-24 sm:w-28">
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT CONTAINER -->
+    <div class="w-full min-h-[60vh] flex flex-col justify-center items-center bg-purple-800 sm:flex-row space-x-4">
+        <img src="assets/master.png" alt="Master Image" class="w-60 my-5">
+        
+        <div class="w-64 my-5 sm:w-96 text-justify">
+            <h3 class="text-xl font-semibold rubik-semibold">Sobre mim</h3>
+            <p class="rubik-regular">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised.
+            </p>
+        </div>
+    </div>
+
+    <!-- PROJECTS CONTAINER -->
+    <div class="w-full p-5 justify-items-center sm:flex-row">
+        <h3 class="text-3xl font-bold mb-8">Projetos</h3>
+      
+        <div class="grid grid-cols-1 justify-items-center :grid-cols-2 md:grid-cols-3 gap-6">
+
+            {% include 'project-card.jinja' %}
+            
+          </div>
+      </div>
+      
+
 </body>
 </html>
