@@ -1,0 +1,38 @@
+<!-- SECTION FOR THE INTRODUCTION -->
+
+<section
+    class="min-h-screen uk-section uk-flex uk-flex-center uk-flex-middle uk-flex-column bg-[#09090b]"
+>
+    <!-- DIV CONTAINER HOLDING THE PAGE LINKS -->
+    <div class="uk-flex uk-flex-row uk-flex-center gap-5 m-5">
+        {% for name,link in pages.items() %}
+        <a
+            class="uk-button uk-button-text text-base text-white px-6 py-2 hover:bg-[#e4e5e9] hover:text-black"
+            href="{{ link }}"
+            >{{ name }}</a
+        >
+        {% endfor %}
+    </div>
+
+    <!-- DIVIDER | LINKS <||> CONTENT -->
+    <hr class="uk-divider-icon w-2/3 mb-5 sm:w-1/2" />
+
+    <!-- DIV CONTAINER HOLDING THE CONTENT IN THE INTRODUCTION -->
+    <div
+        class="uk-container uk-flex uk-flex-center uk-flex-middle uk-flex-wrap gap-5"
+    >
+        <!-- DIV CONTAINER HOLDING THE INTRODUCTION TEXT -->
+        <div id="introduction-text">
+            <h1 class="uk-h1 text-white">Guilherme Franco</h1>
+        </div>
+
+        <!-- DIV CONTAINER HOLDING THE INTRODUCTION IMAGE -->
+        <div id="introduction-image">
+            <img
+                class="w-36"
+                src="{{ url_for('assets', path='/img/guilhermwn-light.png') }}"
+                alt=""
+            />
+        </div>
+    </div>
+</section>

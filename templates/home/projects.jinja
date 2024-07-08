@@ -1,0 +1,50 @@
+<!-- SECTION FOR THE PROJECTS  -->
+
+{% import '/components/home_projects_card.jinja' as home_card %}
+
+<section class="uk-section bg-[#09090b]">
+    <!-- CONTAINER -->
+    <div class="uk-container">
+
+        <!-- TITLE -->
+        <div class="uk-flex uk-flex-center">
+            <h2 class="uk-h2 text-white">Projetos</h2>
+        </div>
+
+        <!-- DIVIDER -->
+        <hr class="uk-divider-icon my-8" />
+
+        <!-- PROJECT CARDS -->
+        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+            
+            {% with img_url=url_for('assets', path='/img/projetos/takhyon-helps.png') %}
+                {{ home_card.card(
+                    title='Tackhyon Helps',
+                    description='Website de apresentação e documentação para um bot do Discord',
+                    img_name=img_url,
+                    href='https://github.com/Guilhermwn/Portfolio_HTML/blob/main/Website%20-%20Takhyon%20Helps/README.md',
+                    blank='true'
+                ) }}
+            {% endwith %}
+            {% with img_url=url_for('assets', path='/img/projetos/scicalcs-nicegui.png') %}
+                {{ home_card.card(
+                    title='SciCalcs',
+                    description='Website de auxílio estudantil construído usando Python e NiceGUI',
+                    img_name=img_url,
+                    href='https://scicalcs.onrender.com',
+                    blank='true'
+                ) }}
+            {% endwith %}
+            {% with img_url=url_for('assets', path='/img/projetos/embedded-utils.png') %}
+                {{ home_card.card(
+                    title='Embedded Utils',
+                    description='Ferramenta CLI de utilidades para programação embarcada',
+                    img_name=img_url,
+                    href='https://github.com/Guilhermwn/embedded-utils/',
+                    blank='true'
+                ) }}
+            {% endwith %}
+
+        </div>
+    </div>
+</section>
