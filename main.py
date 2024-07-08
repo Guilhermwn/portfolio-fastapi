@@ -4,7 +4,6 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 
-favicon_path = 'favicon.ico'
 BASE_DIR = Path(__file__).parent
 
 app = FastAPI()
