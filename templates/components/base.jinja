@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
     <head>
         <link
             id="favicon"
             rel="icon"
             type="image/x-icon"
-            href="../../favicon.ico"
+            href="{{ url_for('assets', path='favicon.ico') }}"
         />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,18 +23,6 @@
 
         <!-- PAGE LOAD SCRIPTS -->
         <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-            if (
-                localStorage.getItem("color-theme") === "dark" ||
-                (!("color-theme" in localStorage) &&
-                    window.matchMedia("(prefers-color-scheme: dark)").matches)
-            ) {
-                document.documentElement.classList.add("dark");
-            } else {
-                document.documentElement.classList.remove("dark");
-            }
-        </script>
 
         <title>Guilhermwn - {{ title }}</title>
     </head>

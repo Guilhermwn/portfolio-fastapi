@@ -17,9 +17,9 @@ def template_response(html: str, request: Request, **kwargs):
     context.update(kwargs)
     return templates.TemplateResponse(html, context)
 
-@app.get('/favicon.ico', include_in_schema=False)
-async def favicon():
-    return FileResponse(favicon_path)
+# @app.get('/favicon.ico', include_in_schema=False)
+# async def favicon():
+#     return FileResponse(favicon_path)
 
 @app.get('/', response_class=HTMLResponse)
 def home(request: Request):
