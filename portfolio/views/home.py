@@ -2,6 +2,31 @@ import htpy as h
 from pathlib import Path
 from .base import base
 
+def presentation_section():
+    return h.section(
+    class_="min-h-screen uk-section uk-flex uk-flex-center uk-flex-middle uk-flex-column bg-[#09090b]"
+)[
+    h.div(".uk-flex.uk-flex-row.uk-flex-center.gap-5.m-5")[
+        h.blockquote('.text-white.uk-blockquote')['I was an ordinary person with ordinary skills. But even so, this didn\'t mean I could only do ordinary things.']
+        # (h.a(
+        #     class_="uk-button uk-button-text text-base text-white px-6 py-2 hover:bg-[#e4e5e9] hover:text-black",
+        #     href="#",
+        # )[f"{ name }"] for name in ['Links', 'Projetos', 'Sobre']),
+    ],
+    h.hr(".uk-divider-icon.w-2/3.mb-5.sm:w-1/2"),
+    h.div(".uk-container.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-wrap.gap-5")[
+        h.div("#introduction-text")[h.h1(".uk-h1.text-white")["Guilherme Franco"]],
+        h.div("#introduction-image")[
+            h.img(
+                ".w-36",
+                src="assets/img/guilhermwn-light.png",
+                alt="",
+            )
+        ],
+    ],
+]
+
+
 def about_section():
     return h.section(
         class_="uk-section uk-width-1-1 uk-flex uk-flex-center uk-flex-middle bg-[#e4e5e9]"
@@ -34,30 +59,6 @@ def about_section():
     ]
 
 
-def presentation_section():
-    return h.section(
-    class_="min-h-screen uk-section uk-flex uk-flex-center uk-flex-middle uk-flex-column bg-[#09090b]"
-)[
-    h.div(".uk-flex.uk-flex-row.uk-flex-center.gap-5.m-5")[
-        (h.a(
-            class_="uk-button uk-button-text text-base text-white px-6 py-2 hover:bg-[#e4e5e9] hover:text-black",
-            href="#",
-        )[f"{ name }"] for name in ['Links', 'Projetos', 'Sobre']),
-    ],
-    h.hr(".uk-divider-icon.w-2/3.mb-5.sm:w-1/2"),
-    h.div(".uk-container.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-wrap.gap-5")[
-        h.div("#introduction-text")[h.h1(".uk-h1.text-white")["Guilherme Franco"]],
-        h.div("#introduction-image")[
-            h.img(
-                ".w-36",
-                src="assets/img/guilhermwn-light.png",
-                alt="",
-            )
-        ],
-    ],
-]
-
-
 def project_card(link:str, img:Path, title: str, description: str):
     return h.div[
         h.a(".uk-link-toggle", href=link)[
@@ -81,7 +82,8 @@ def projects_section():
             h.div(".uk-container")[
                 h.div(".uk-flex.uk-flex-center")[h.h2(".uk-h2.text-white")["Projetos"]],
                 h.hr(".uk-divider-icon.my-8"),
-                h.div(".uk-child-width-expand@s.uk-text-center", uk_grid=True)[
+                # h.div(".uk-child-width-expand@s.uk-text-center", uk_grid=True)[
+                h.div(".uk-child-width-expand@s.uk-text-center.uk-grid-small", uk_grid=True)[
                     project_card(link='https://github.com/Guilhermwn/Portfolio_HTML/tree/main/Website%20-%20Takhyon%20Helps',
                                 img='assets/img/projetos/takhyon-helps.png', 
                                 title='Tackhyon Helps', 

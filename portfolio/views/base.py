@@ -13,7 +13,7 @@ def base(title:str, content:h.Element):
             h.meta(name="viewport", content="width=device-width, initial-scale=1.0"),
             h.link(
                 rel="stylesheet",
-                href="https://unpkg.com/franken-ui-releases@0.0.13/dist/default.min.css",
+                href="https://unpkg.com/franken-wc@0.1.0/dist/css/zinc.min.css",
             ),
             h.link(
                 rel="stylesheet",
@@ -25,9 +25,9 @@ def base(title:str, content:h.Element):
         ],
         h.body[
             content,
-            h.script(src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit.min.js"),
+            h.script(src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit.min.js"),
             h.script(
-                src="https://cdn.jsdelivr.net/npm/uikit@3.21.5/dist/js/uikit-icons.min.js"
+                src="https://cdn.jsdelivr.net/npm/uikit@3.21.6/dist/js/uikit-icons.min.js"
             ),
         ],
     ]
