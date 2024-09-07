@@ -6,14 +6,14 @@ def presentation_section():
     return h.section(
     class_="min-h-screen uk-section uk-flex uk-flex-center uk-flex-middle uk-flex-column bg-[#09090b]"
 )[
-    h.div(".uk-flex.uk-flex-row.uk-flex-center.gap-5.m-5")[
-        h.blockquote('.text-white.uk-blockquote')['I was an ordinary person with ordinary skills. But even so, this didn\'t mean I could only do ordinary things.']
+    # h.div(".uk-flex.uk-flex-row.uk-flex-center.gap-5.m-5")[
+        # h.blockquote('.text-white.uk-blockquote')['I was an ordinary person with ordinary skills. But even so, this didn\'t mean I could only do ordinary things.']
         # (h.a(
         #     class_="uk-button uk-button-text text-base text-white px-6 py-2 hover:bg-[#e4e5e9] hover:text-black",
         #     href="#",
         # )[f"{ name }"] for name in ['Links', 'Projetos', 'Sobre']),
-    ],
-    h.hr(".uk-divider-icon.w-2/3.mb-5.sm:w-1/2"),
+    # ],
+    # h.hr(".uk-divider-icon.w-2/3.mb-5.sm:w-1/2"),
     h.div(".uk-container.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-wrap.gap-5")[
         h.div("#introduction-text")[h.h1(".uk-h1.text-white")["Guilherme Franco"]],
         h.div("#introduction-image")[
@@ -24,6 +24,8 @@ def presentation_section():
             )
         ],
     ],
+    h.hr(".uk-divider-icon.w-2/3.mb-5.sm:w-1/2"),
+    h.blockquote('.text-white.uk-blockquote')['I was an ordinary person with ordinary skills. But even so, this didn\'t mean I could only do ordinary things.']
 ]
 
 
